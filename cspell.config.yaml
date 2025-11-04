@@ -5,6 +5,8 @@ ignorePaths:
 dictionaryDefinitions: []
 dictionaries: []
 words:
+  - postorder
+  - preorder
   - xunit
 ignoreWords: []
 import: []

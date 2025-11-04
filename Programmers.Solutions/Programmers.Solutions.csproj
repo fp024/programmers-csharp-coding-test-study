@@ -2,9 +2,12 @@
 
   <PropertyGroup>
     <TargetFramework>net9.0</TargetFramework>
-    <LanguageVersion>7.0</LanguageVersion>
+    <LangVersion>7.0</LangVersion>
+    <!-- C# 7.0에서는 사용할 수 없는 속성 -->
+    <!--
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    -->
   </PropertyGroup>
 
 </Project>
