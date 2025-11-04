@@ -1,0 +1,10 @@
+version: "0.2"
+ignorePaths:
+  - .editorconfig
+  - .gitignore
+dictionaryDefinitions: []
+dictionaries: []
+words:
+  - xunit
+ignoreWords: []
+import: []
