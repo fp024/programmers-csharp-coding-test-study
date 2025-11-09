@@ -15,6 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Programmers.Solutions.Modern\Programmers.Solutions.Modern.csproj"/>
     <ProjectReference Include="..\Programmers.Solutions\Programmers.Solutions.csproj"/>
   </ItemGroup>
 
