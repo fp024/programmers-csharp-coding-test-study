@@ -8,14 +8,14 @@ public static class Exam42892
 {
     private sealed class Node
     {
-        internal int Value { get; }
-        internal int X { get; }
-        internal int Y { get; }
+        public int Value { get; }
+        public int X { get; }
+        public int Y { get; }
 
-        internal Node? Left { get; set; }
-        internal Node? Right { get; set; }
+        public Node? Left { get; set; }
+        public Node? Right { get; set; }
 
-        internal Node(int value, int x, int y)
+        public Node(int value, int x, int y)
         {
             Value = value;
             X = x;
@@ -37,10 +37,10 @@ public static class Exam42892
         var root = ConstructTree(nodes);
 
         var preorder = new List<int>();
-        Pre(root, preorder);
+        PreOrder(root, preorder);
 
         var postorder = new List<int>();
-        Post(root, postorder);
+        PostOrder(root, postorder);
 
         return [preorder.ToArray(), postorder.ToArray()];
     }
@@ -86,7 +86,7 @@ public static class Exam42892
         }
     }
 
-    private static void Pre(Node? node, List<int> visits)
+    private static void PreOrder(Node? node, List<int> visits)
     {
         if (node == null)
         {
@@ -94,19 +94,19 @@ public static class Exam42892
         }
 
         visits.Add(node.Value);
-        Pre(node.Left, visits);
-        Pre(node.Right, visits);
+        PreOrder(node.Left, visits);
+        PreOrder(node.Right, visits);
     }
 
-    private static void Post(Node? node, List<int> visits)
+    private static void PostOrder(Node? node, List<int> visits)
     {
         if (node == null)
         {
             return;
         }
 
-        Post(node.Left, visits);
-        Post(node.Right, visits);
+        PostOrder(node.Left, visits);
+        PostOrder(node.Right, visits);
         visits.Add(node.Value);
     }
 }

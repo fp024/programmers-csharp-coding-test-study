@@ -9,21 +9,14 @@ public static class Exam42892A
     /// <summary>
     /// 이진 트리의 노드
     /// </summary>
-    private sealed class Node
+    private sealed class Node(int value, int x, int y)
     {
-        internal int Value { get; }
-        internal int X { get; }
-        internal int Y { get; }
+        public int Value { get; } = value;
+        public int X { get; } = x;
+        public int Y { get; } = y;
 
-        internal Node? Left { get; set; }
-        internal Node? Right { get; set; }
-
-        internal Node(int value, int x, int y)
-        {
-            Value = value;
-            X = x;
-            Y = y;
-        }
+        public Node? Left { get; set; }
+        public Node? Right { get; set; }
     }
 
     /// <summary>
@@ -41,10 +34,10 @@ public static class Exam42892A
         var root = ConstructTree(nodes);
 
         var preorder = new List<int>();
-        Pre(root, preorder);
+        PreOrder(root, preorder);
 
         var postorder = new List<int>();
-        Post(root, postorder);
+        PostOrder(root, postorder);
 
         return [preorder.ToArray(), postorder.ToArray()];
     }
@@ -97,6 +90,10 @@ public static class Exam42892A
 
                 parentNode = parentNode.Right;
             }
+            else
+            {
+                throw new InvalidOperationException("노드의 X좌표가 중복되었습니다.");
+            }
         }
     }
 
@@ -105,7 +102,7 @@ public static class Exam42892A
     /// </summary>
     /// <param name="rootNode">루트 노드</param>
     /// <param name="visits">방문 노드 저장용도 리스트</param>
-    private static void Pre(Node rootNode, List<int> visits)
+    private static void PreOrder(Node rootNode, List<int> visits)
     {
         var stack = new Stack<Node>();
         stack.Push(rootNode);
@@ -127,30 +124,22 @@ public static class Exam42892A
         }
     }
 
-    private sealed class PostOrderStackFrame
-    {
-        private Node Node { get; }
-        private bool Visited { get; }
-
-        internal PostOrderStackFrame(Node node, bool visited)
-        {
-            Node = node;
-            Visited = visited;
-        }
-
-        internal void Deconstruct(out Node node, out bool visited)
-        {
-            node = Node;
-            visited = Visited;
-        }
-    }
+    /// <summary>
+    /// 후위 순회(Stack 기반)에서 사용되는 프레임을 나타냅니다.
+    /// 💡 Node 정보를 참고하여, PostOrderStackFrame은 항상 새로 만들기 때문에
+    ///    불변이다, 그러므로 레코드로 만든다.
+    ///
+    /// </summary>
+    /// <param name="Node">트리 순회 중 현재 처리 중인 노드</param>
+    /// <param name="Visited">해당 노드가 이미 방문되었는지를 나타내는 플래그</param>
+    private sealed record PostOrderStackFrame(Node Node, bool Visited);
 
     /// <summary>
     /// 후위 순회 L -> R -> P
     /// </summary>
-    /// <param name="rootNode">현재 노드</param>
+    /// <param name="rootNode">루트 노드</param>
     /// <param name="visits">방문 노드 저장용도 리스트</param>
-    private static void Post(Node rootNode, List<int> visits)
+    private static void PostOrder(Node rootNode, List<int> visits)
     {
         var stack = new Stack<PostOrderStackFrame>();
         stack.Push(new PostOrderStackFrame(rootNode, false));
