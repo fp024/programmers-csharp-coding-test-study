@@ -160,5 +160,16 @@ dotnet test --filter "FullyQualifiedName=Programmers.Solutions.tests.Lv03.Exam42
 dotnet build
 ```
 
+## 트러블슈팅
+
+### 빌드 오류 시
+
+- `.NET SDK 9.0` 설치 확인: `dotnet --version`
+- IDE 사용자는 프로젝트를 다시 열거나 솔루션 새로고침
+- 명령줄 사용자는 NuGet 패키지 복원: `dotnet restore`
+
+### 테스트 실행 안 될 때
+
+- 테스트 프로젝트 빌드: `dotnet build Programmers.Solutions.tests/`
   
 
