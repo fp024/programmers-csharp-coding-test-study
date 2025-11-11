@@ -6,6 +6,9 @@
 */
 public static class Exam42892A
 {
+    /// <summary>
+    /// 이진 트리의 노드
+    /// </summary>
     private sealed class Node
     {
         internal int Value { get; }
@@ -23,16 +26,17 @@ public static class Exam42892A
         }
     }
 
+    /// <summary>
+    /// 주어진 노드 데이터를 사용하여 이진 트리를 생성하고, 생성된 트리를 전위 순회와 후위 순회한 결과를 반환합니다.
+    /// </summary>
+    /// <param name="nodeInfo">노드들의 좌표 정보를 포함한 2차원 배열. 배열의 각 행은 [x, y] 형태로 노드의 좌표를 나타냅니다.</param>
+    /// <returns>2차원 배열로, 첫 번째 행은 전위 순회 결과이고 두 번째 행은 후위 순회 결과입니다.</returns>
     public static int[][] Solution(int[][] nodeInfo)
     {
-        var nodes = new Node[nodeInfo.Length];
-
-        for (var i = 0; i < nodeInfo.Length; i++)
-        {
-            nodes[i] = new Node(i + 1, nodeInfo[i][0], nodeInfo[i][1]);
-        }
-
-        Array.Sort(nodes, (a, b) => b.Y.CompareTo(a.Y));
+        var nodes = nodeInfo
+            .Select((info, i) => new Node(i + 1, info[0], info[1]))
+            .OrderByDescending(node => node.Y)
+            .ToArray();
 
         var root = ConstructTree(nodes);
 
@@ -45,6 +49,11 @@ public static class Exam42892A
         return [preorder.ToArray(), postorder.ToArray()];
     }
 
+    /// <summary>
+    /// 주어진 노드 리스트를 사용하여 이진 트리를 구성합니다.
+    /// </summary>
+    /// <param name="nodes">노드의 배열로, 각 노드는 X와 Y 좌표값을 포함하고 있습니다.</param>
+    /// <returns>구성된 이진 트리의 루트 노드.</returns>
     private static Node ConstructTree(Node[] nodes)
     {
         var root = nodes[0];
@@ -118,15 +127,56 @@ public static class Exam42892A
         }
     }
 
-    private static void Post(Node? node, List<int> visits)
+    private sealed class PostOrderStackFrame
     {
-        if (node == null)
+        private Node Node { get; }
+        private bool Visited { get; }
+
+        internal PostOrderStackFrame(Node node, bool visited)
         {
-            return;
+            Node = node;
+            Visited = visited;
         }
 
-        Post(node.Left, visits);
-        Post(node.Right, visits);
-        visits.Add(node.Value);
+        internal void Deconstruct(out Node node, out bool visited)
+        {
+            node = Node;
+            visited = Visited;
+        }
+    }
+
+    /// <summary>
+    /// 후위 순회 L -> R -> P
+    /// </summary>
+    /// <param name="rootNode">현재 노드</param>
+    /// <param name="visits">방문 노드 저장용도 리스트</param>
+    private static void Post(Node rootNode, List<int> visits)
+    {
+        var stack = new Stack<PostOrderStackFrame>();
+        stack.Push(new PostOrderStackFrame(rootNode, false));
+
+        while (stack.Count > 0)
+        {
+            var (currentNode, visited) = stack.Pop();
+
+            if (visited)
+            {
+                visits.Add(currentNode.Value);
+            }
+            else
+            {
+                stack.Push(new PostOrderStackFrame(currentNode, true));
+
+                if (currentNode.Right != null)
+                {
+                    stack.Push(new PostOrderStackFrame(currentNode.Right, false));
+                }
+
+                if (currentNode.Left != null)
+                {
+                    stack.Push(new PostOrderStackFrame(currentNode.Left, false));
+                }
+            }
+        }
     }
 }
