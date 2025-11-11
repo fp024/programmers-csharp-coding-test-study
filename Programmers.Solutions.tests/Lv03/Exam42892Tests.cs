@@ -31,6 +31,13 @@ public class Exam42892Tests
     [MemberData(nameof(DefaultTestCases))]
     public void Solution_Modern_Test(TestCase testCase)
     {
-        Assert.Equal(testCase.Expected, new ModernLv03.Exam42892().Solution(testCase.NodeInfo));
+        Assert.Equal(testCase.Expected, ModernLv03.Exam42892.Solution(testCase.NodeInfo));
+    }
+
+    [Theory]
+    [MemberData(nameof(DefaultTestCases))]
+    public void Solution_Modern_Test_A(TestCase testCase)
+    {
+        Assert.Equal(testCase.Expected, ModernLv03.Exam42892A.Solution(testCase.NodeInfo));
     }
 }

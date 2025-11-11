@@ -2,9 +2,9 @@
 
 /*
   길 찾기 게임 - 42892
-  - 이 문제는 프로그래머스에서 C#으로는 풀수 없다.
+  - 이진 트리 생성 / 전위 순회 / 후위 순회를 반복으로 구현
 */
-public static class Exam42892
+public static class Exam42892A
 {
     private sealed class Node
     {
@@ -57,31 +57,36 @@ public static class Exam42892
         return root;
     }
 
-    private static void Insert(Node root, Node node)
+    /// <summary>
+    /// 노드 삽입
+    /// </summary>
+    /// <param name="rootNode">루트 노드</param>
+    /// <param name="newNode">추가할 신규 노드</param>
+    private static void Insert(Node rootNode, Node newNode)
     {
-        // x 좌표에 따라 root 노드가 나타내는 트리에 node 삽입
-        if (node.X < root.X)
+        var parentNode = rootNode;
+
+        while (true)
         {
-            // 왼쪽 서브 트리에 삽입
-            if (root.Left == null)
+            if (parentNode.X > newNode.X)
             {
-                root.Left = node;
+                if (parentNode.Left == null)
+                {
+                    parentNode.Left = newNode;
+                    break;
+                }
+
+                parentNode = parentNode.Left;
             }
-            else
+            else if (parentNode.X < newNode.X)
             {
-                Insert(root.Left, node);
-            }
-        }
-        else
-        {
-            // 오른쪽 서브 트리에 삽입
-            if (root.Right == null)
-            {
-                root.Right = node;
-            }
-            else
-            {
-                Insert(root.Right, node);
+                if (parentNode.Right == null)
+                {
+                    parentNode.Right = newNode;
+                    break;
+                }
+
+                parentNode = parentNode.Right;
             }
         }
     }
