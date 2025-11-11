@@ -43,12 +43,12 @@ Programmers.CSharp.Coding.Study/
 │   ├── extensions.json            # 권장 확장 프로그램
 │   └── settings.json              # 워크스페이스 설정
 │
-├── 📦 Programmers.Solutions/          # 프로그래메서 제출용 솔루션 프로젝트
+├── 📦 Programmers.Solutions/      # 프로그래메서 제출용 솔루션 프로젝트
 │   ├── Programmers.Solutions.csproj
 │   └── Lv03/
-│       └── Exam42892.cs                # 레벨 3 문제
+│       └── Exam42892.cs           # 레벨 3 문제
 │
-├── 📦 Programmers.Solutions.Modern/  # 최신 C# 문법 활용한 솔루션 프로젝트
+├── 📦 Programmers.Solutions.Modern/ # 최신 C# 문법 활용한 솔루션 프로젝트
 │   ├── Programmers.Solutions.Modern.csproj
 │   └── Lv03/
 │       ├── Exam42892.cs          # 레벨 3 문제
@@ -128,7 +128,8 @@ Programmers.CSharp.Coding.Study/
 Java와는 다르게 src/test에다 한 프로젝트에 테스트 코드를 만들지 않고,
 타겟 프로젝트에 대한 테스트 전용 프로젝트를 만들어서 테스트 코드를 추가함.
 
-JUnit과 가장 비슷한 게 xUnit 기반 프로젝트라고 해서 그걸로 만들기로 함.
+C#에서 가장 보편적으로 사용되는 테스트 프레임워크인 xUnit 기반 프로젝트로 만들기로 함. (Java의 TestNG와 유사)
+
 
 ## 코드 포맷터
 
