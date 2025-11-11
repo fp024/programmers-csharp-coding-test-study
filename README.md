@@ -1,3 +1,4 @@
+<!-- @formatter:off -->
 # 프로그래머스 C# 코딩 테스트 - 스터디
 
 > 코딩 테스트 연습을 JS/TS, Java, C++, Python 환경에서 가끔씩 😅 하고 있었는데,
@@ -7,24 +8,13 @@
 > 쉽고 체계적인 것을 느끼게 되어서 코딩 테스트 프로젝트를 만들어보고 싶었다.
 >
 > * JS/TS
-    >
-
-* https://github.com/fp024/programmers-js-coding-test-study
-
+>   * https://github.com/fp024/programmers-js-coding-test-study
 > * Java
-    >
-
-* https://github.com/fp024/programmers-java-coding-test-study
-
+>   * https://github.com/fp024/programmers-java-coding-test-study
 > * C++
-    >
-
-* https://github.com/fp024/programmers-c-coding-test-study
-
+>   * https://github.com/fp024/programmers-c-coding-test-study
 > * Python
-    >
-
-* https://github.com/fp024/programmers-python-coding-test-study
+>   * https://github.com/fp024/programmers-python-coding-test-study
 
 ## 스터디 프로젝트 구성
 
@@ -79,7 +69,7 @@ Programmers.CSharp.Coding.Study/
 ### .NET SDK 설치
 
 * **9.0**
-    * https://dotnet.microsoft.com/ko-kr/download/dotnet/9.0
+  * https://dotnet.microsoft.com/ko-kr/download/dotnet/9.0
 
 프로그래머스의 C# 컴파일러가 **Mono C# Compiler 6.10.0**인데, C# 8.0 RC 대응이다. (부분지원?)
 
@@ -114,7 +104,7 @@ Programmers.CSharp.Coding.Study/
 ### Rider
 
 * https://www.jetbrains.com/ko-kr/rider/
-    * Rider면 다 된다고 함 👍 Windows Forms의 WYSIWYG 개발도 되는 것 같음.
+  * Rider면 다 된다고 함 👍 Windows Forms의 WYSIWYG 개발도 되는 것 같음.
 
 ## 디펜던시 관리자 (NuGet)
 
@@ -129,7 +119,6 @@ Java와는 다르게 src/test에다 한 프로젝트에 테스트 코드를 만�
 타겟 프로젝트에 대한 테스트 전용 프로젝트를 만들어서 테스트 코드를 추가함.
 
 C#에서 가장 보편적으로 사용되는 테스트 프레임워크인 xUnit 기반 프로젝트로 만들기로 함. (Java의 TestNG와 유사)
-
 
 ## 코드 포맷터
 
@@ -172,5 +161,5 @@ dotnet build
 ### 테스트 실행 안 될 때
 
 - 테스트 프로젝트 빌드: `dotnet build Programmers.Solutions.tests/`
-  
+
 
