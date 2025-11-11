@@ -91,16 +91,31 @@ public static class Exam42892A
         }
     }
 
-    private static void Pre(Node? node, List<int> visits)
+    /// <summary>
+    /// 전위 순회  P -> L -> R
+    /// </summary>
+    /// <param name="rootNode">루트 노드</param>
+    /// <param name="visits">방문 노드 저장용도 리스트</param>
+    private static void Pre(Node rootNode, List<int> visits)
     {
-        if (node == null)
-        {
-            return;
-        }
+        var stack = new Stack<Node>();
+        stack.Push(rootNode);
 
-        visits.Add(node.Value);
-        Pre(node.Left, visits);
-        Pre(node.Right, visits);
+        while (stack.Count > 0)
+        {
+            var currentNode = stack.Pop();
+            visits.Add(currentNode.Value);
+
+            if (currentNode.Right != null)
+            {
+                stack.Push(currentNode.Right);
+            }
+
+            if (currentNode.Left != null)
+            {
+                stack.Push(currentNode.Left);
+            }
+        }
     }
 
     private static void Post(Node? node, List<int> visits)
