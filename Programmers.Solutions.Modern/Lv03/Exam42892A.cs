@@ -1,4 +1,4 @@
-﻿namespace Programmers.Solutions.Modern.Lv03;
+namespace Programmers.Solutions.Modern.Lv03;
 
 /*
   길 찾기 게임 - 42892

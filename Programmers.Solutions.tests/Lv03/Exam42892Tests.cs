@@ -1,4 +1,4 @@
-﻿namespace Programmers.Solutions.tests.Lv03;
+namespace Programmers.Solutions.tests.Lv03;
 
 using LegacyLv03 = Programmers.Solutions.Lv03;
 using ModernLv03 = Programmers.Solutions.Modern.Lv03;
