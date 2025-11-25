@@ -1,5 +1,6 @@
 {
-    "recommendations": [
-        "ms-dotnettools.csdevkit"
-    ],
+  "recommendations": [
+    "ms-dotnettools.csdevkit",
+    "ms-dotnettools.dotnet-interactive-vscode"
+  ]
 }
