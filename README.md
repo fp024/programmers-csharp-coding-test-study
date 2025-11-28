@@ -21,6 +21,10 @@
 
 ```
 Programmers.CSharp.Coding.Study/
+│
+├── convert-utf8bom-to-utf8.bat    # UTF-8 BOM 제거 배치파일
+├── convert-utf8bom-to-utf8.ps1    # UTF-8 BOM 제거 PowerShell Script
+│
 ├── 🔧 설정 파일
 │   ├── .editorconfig              # 코드 스타일 설정
 │   ├── .gitignore                 # Git 제외 파일
