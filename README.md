@@ -44,12 +44,18 @@ Programmers.CSharp.Coding.Study/
 |
 +-- 📦 Programmers.Solutions.Modern/ # 최신 C# 문법 활용한 솔루션 프로젝트
 |   +-- Programmers.Solutions.Modern.csproj
+|   +-- Practice/
+|   |   \-- Practice000001.cs      # 개인 연습문제
+|   |
 |   \-- Lv03/
 |       +-- Exam42892.cs           # 레벨 3 문제
 |       \-- Exam42892A.cs          # 레벨 3 문제 - 재귀를 루프로 변환
 |
 \-- 🧪 Programmers.Solutions.Tests/ # 테스트 프로젝트
     +-- Programmers.Solutions.Tests.csproj
+    +-- Practice/
+    |   \-- Practice000001Tests.cs # 프로그래머스와는 관계 없는 개인 연습문제 테스트
+    |
     \-- Lv03/
         \-- Exam42892Tests.cs      # 레벨 3 테스트
 ```
