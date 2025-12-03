@@ -54,7 +54,7 @@ Programmers.CSharp.Coding.Study/
 \-- 🧪 Programmers.Solutions.Tests/ # 테스트 프로젝트
     +-- Programmers.Solutions.Tests.csproj
     +-- Practice/
-    |   \-- Practice000001Tests.cs # 프로그래머스와는 관계 없는 개인 연습문제 테스트
+    |   \-- Practice000001Tests.cs # 개인 연습문제 테스트
     |
     \-- Lv03/
         \-- Exam42892Tests.cs      # 레벨 3 테스트
