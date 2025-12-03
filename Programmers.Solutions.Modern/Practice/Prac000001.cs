@@ -11,29 +11,30 @@ internal static class Prac000001
     {
         Dictionary<string, int> wordCountDict = new();
 
-        for (var i = 0; i < s.Length; i++)
+        var idx = 0;
+        while (idx < s.Length)
         {
             // 1. 구분자 (공백, 쉼표, 마침표) 건너 뛰기
-            while (i < s.Length && (s[i] == ' ' || s[i] == ',' || s[i] == '.'))
+            while (idx < s.Length && IsSkipChar(s[idx]))
             {
-                i++;
+                idx++;
             }
 
-            if (i >= s.Length)
+            if (idx >= s.Length)
             {
                 break;
             }
 
             // 2. 단어 시작 위치 기억
-            var startIdx = i;
+            var startIdx = idx;
 
             // 3. 단어 끝 찾기
-            while (i < s.Length && (s[i] != ' ' && s[i] != ',' && s[i] != '.'))
+            while (idx < s.Length && !IsSkipChar(s[idx]))
             {
-                i++;
+                idx++;
             }
 
-            var lowerWord = s.Substring(startIdx, i - startIdx).ToLower();
+            var lowerWord = s.Substring(startIdx, idx - startIdx).ToLower();
 
             if (!wordCountDict.TryAdd(lowerWord, 1))
             {
@@ -43,4 +44,6 @@ internal static class Prac000001
 
         return wordCountDict;
     }
+
+    private static bool IsSkipChar(char c) => c is ' ' or ',' or '.';
 }
