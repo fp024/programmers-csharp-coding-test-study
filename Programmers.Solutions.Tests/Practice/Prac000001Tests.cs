@@ -1,3 +1,5 @@
+using Programmers.Solutions.Tests.Common;
+
 namespace Programmers.Solutions.Tests.Practice;
 
 using ModernPractice = Programmers.Solutions.Modern.Practice;
@@ -25,7 +27,7 @@ public class Prac000001Tests
         )
     ];
 
-    [Theory, MemberData(nameof(DefaultTestCases))]
+    [LimitedTheory, MemberData(nameof(DefaultTestCases))]
     public void Solution_Modern_Test(TestCase testCase)
     {
         Assert.Equal(testCase.Expected, ModernPractice.Prac000001.Solutions(testCase.S));

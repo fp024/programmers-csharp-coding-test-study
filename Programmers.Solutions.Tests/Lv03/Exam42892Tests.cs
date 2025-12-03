@@ -1,3 +1,5 @@
+using Programmers.Solutions.Tests.Common;
+
 namespace Programmers.Solutions.Tests.Lv03;
 
 using LegacyLv03 = Programmers.Solutions.Lv03;
@@ -20,19 +22,19 @@ public class Exam42892Tests
     ];
 
 
-    [Theory, MemberData(nameof(DefaultTestCases))]
+    [LimitedTheory, MemberData(nameof(DefaultTestCases))]
     public void Solution_Legacy_Test(TestCase testCase)
     {
         Assert.Equal(testCase.Expected, new LegacyLv03.Exam42892().Solution(testCase.NodeInfo));
     }
 
-    [Theory, MemberData(nameof(DefaultTestCases))]
+    [LimitedTheory, MemberData(nameof(DefaultTestCases))]
     public void Solution_Modern_Test(TestCase testCase)
     {
         Assert.Equal(testCase.Expected, ModernLv03.Exam42892.Solution(testCase.NodeInfo));
     }
 
-    [Theory, MemberData(nameof(DefaultTestCases))]
+    [LimitedTheory, MemberData(nameof(DefaultTestCases))]
     public void Solution_Modern_Test_A(TestCase testCase)
     {
         Assert.Equal(testCase.Expected, ModernLv03.Exam42892A.Solution(testCase.NodeInfo));
