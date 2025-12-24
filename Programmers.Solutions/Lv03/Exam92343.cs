@@ -26,7 +26,9 @@ namespace Programmers.Solutions.Lv03
             /// <summary>현재까지의 늑대의 카운트</summary>
             public readonly int WolfCount;
 
-            /// <summary></summary>
+            /// <summary>
+            /// 탐색 중 방문 가능한 다음 노드 후보군을 저장하는 집합
+            /// </summary>
             public readonly HashSet<int> Candidates;
 
             public State(int currentNode, int sheepCount, int wolfCount, HashSet<int> candidates)
