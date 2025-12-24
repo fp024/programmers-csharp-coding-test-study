@@ -1,9 +1,9 @@
 namespace Programmers.Solutions.Modern.Lv03;
 
-/*
-  길 찾기 게임 - 42892
-  - 이 문제는 프로그래머스에서 C#으로는 풀수 없다.
-*/
+/// <summary>
+/// 길 찾기 게임 - 42892
+/// - 이 문제는 프로그래머스에서 C#으로는 풀수 없다.
+/// </summary>
 internal static class Exam42892
 {
     private sealed class Node

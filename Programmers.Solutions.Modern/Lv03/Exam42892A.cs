@@ -1,9 +1,9 @@
 namespace Programmers.Solutions.Modern.Lv03;
 
-/*
-  길 찾기 게임 - 42892
-  - 이진 트리 생성 / 전위 순회 / 후위 순회를 반복으로 구현
-*/
+/// <summary>
+/// 길 찾기 게임 - 42892
+/// - 이진 트리 생성 / 전위 순회 / 후위 순회를 반복으로 구현
+/// </summary>
 internal static class Exam42892A
 {
     /// <summary>
