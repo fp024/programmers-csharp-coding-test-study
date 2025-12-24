@@ -28,6 +28,8 @@ internal static class Exam92343
             nodes[i, 1] = EmptyNodeIdx;
         }
 
+        // 💡 다차원 배열(int[,])에서 Length는 전체 요소의 합(행*열)을 반환하므로,
+        //    행의 개수만 가져오기 위해 GetLength(0)을 사용한다.
         for (var i = 0; i < edges.GetLength(0); i++)
         {
             var (parent, child) = (edges[i, 0], edges[i, 1]);

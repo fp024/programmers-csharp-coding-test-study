@@ -3,7 +3,6 @@ using System.Collections.Generic;
 
 namespace Programmers.Solutions.Lv03
 {
-
     /*
       길 찾기 게임 - 42892
       - 이 문제는 프로그래머스에서 C#으로는 풀수 없다.
@@ -27,7 +26,8 @@ namespace Programmers.Solutions.Lv03
             }
         }
 
-        public int[][] Solution(int[][] nodeInfo)
+        // 💡 Solution으로 메서드 이름을 지정하면 프로그래머스에서 인식하지 못한다.
+        public int[][] solution(int[][] nodeInfo)
         {
             var nodes = new Node[nodeInfo.Length];
 

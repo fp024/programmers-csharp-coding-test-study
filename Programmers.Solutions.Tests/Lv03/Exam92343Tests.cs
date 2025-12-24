@@ -2,6 +2,7 @@ using Programmers.Solutions.Tests.Common;
 
 namespace Programmers.Solutions.Tests.Lv03;
 
+using LegacyLv03 = Programmers.Solutions.Lv03;
 using ModernLv03 = Programmers.Solutions.Modern.Lv03;
 
 #pragma warning disable xUnit1045
@@ -54,6 +55,12 @@ public class Exam92343Tests
     public void Solution_Modern_Test(TestCase testCase)
     {
         Assert.Equal(testCase.Expected, ModernLv03.Exam92343.Solution(testCase.Info, testCase.Edges));
+    }
+
+    [LimitedTheory, MemberData(nameof(DefaultTestCases))]
+    public void Solution_Legacy_Test(TestCase testCase)
+    {
+        Assert.Equal(testCase.Expected, new LegacyLv03.Exam92343().solution(testCase.Info, testCase.Edges));
     }
 }
 #pragma warning restore xUnit1045

@@ -64,7 +64,7 @@ Programmers.CSharp.Coding.Study/
 
 | 프로젝트                     | C# 버전              | 이유                   |
 | ---------------------------- | -------------------- | ---------------------- |
-| Programmers.Solutions        | 7.3                  | 프로그래머스 제출 환경 |
+| Programmers.Solutions        | 7.0                  | 프로그래머스 제출 환경 |
 | Programmers.Solutions.Modern | latest (SDK 기준 14) | 최신 문법 연습         |
 | Programmers.Solutions.Tests  | latest (SDK 기준 14) | 테스트 편의성          |
 
@@ -85,19 +85,19 @@ Programmers.CSharp.Coding.Study/
 프로그래머스의 C# 컴파일러가 **Mono C# Compiler 6.10.0**인데, C# 8.0 RC 일부 기능까지만 지원한다.  
 Nullable Reference Types 전체 기능 및 최신 패턴 매칭/Range 연산 등은 미지원/부분지원일 수 있다.
 
-.NET SDK는 현시점의 최신으로 사용하면서, 문제 풀이 프로젝트는 C# 7.3으로 언어 버전을 낮춰서 쓰고,
+.NET SDK는 현시점의 최신으로 사용하면서, 문제 풀이 프로젝트는 C# 7.0으로 언어 버전을 낮춰서 쓰고,
 테스트 프로젝트만 버전 제한 없이 설치된 SDK가 제공하는 C# 버전을 사용하도록 하자.
 
 > 💡.NET 10.0은 C# 14 버전을 지원한다.
 >
 > **💡문제 풀이 프로젝트 C# 언어 버전 설정**
 >
-> 문제 풀이 프로젝트([Programmers.Solutions.csproj](Programmers.Solutions/Programmers.Solutions.csproj))는 프로그래머스 환경에 맞춰 C# 7.3으로
+> 문제 풀이 프로젝트([Programmers.Solutions.csproj](Programmers.Solutions/Programmers.Solutions.csproj))는 프로그래머스 환경에 맞춰 C# 7.0으로
 > 설정:
 >
 > ```xml
 > <PropertyGroup>
->     <LangVersion>7.3</LangVersion>
+>     <LangVersion>7</LangVersion>
 > </PropertyGroup>
 > ```
 >

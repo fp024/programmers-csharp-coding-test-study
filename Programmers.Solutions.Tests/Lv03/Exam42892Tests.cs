@@ -25,7 +25,7 @@ public class Exam42892Tests
     [LimitedTheory, MemberData(nameof(DefaultTestCases))]
     public void Solution_Legacy_Test(TestCase testCase)
     {
-        Assert.Equal(testCase.Expected, new LegacyLv03.Exam42892().Solution(testCase.NodeInfo));
+        Assert.Equal(testCase.Expected, new LegacyLv03.Exam42892().solution(testCase.NodeInfo));
     }
 
     [LimitedTheory, MemberData(nameof(DefaultTestCases))]
