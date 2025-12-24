@@ -46,7 +46,7 @@ namespace Programmers.Solutions.Lv03
             var postorder = new List<int>();
             Post(root, postorder);
 
-            return new int[][] { preorder.ToArray(), postorder.ToArray() };
+            return new[] { preorder.ToArray(), postorder.ToArray() };
         }
 
         private static Node ConstructTree(Node[] nodes)
