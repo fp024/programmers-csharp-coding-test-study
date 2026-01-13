@@ -21,43 +21,43 @@
 
 ```
 Programmers.CSharp.Coding.Study/
-|
-| 🔧 스크립트
-+-- convert-utf8bom-to-utf8.bat    # UTF-8 BOM 제거 배치파일
-+-- convert-utf8bom-to-utf8.ps1    # UTF-8 BOM 제거 PowerShell Script
-|
-| ⚙️ 설정 파일
-+-- .editorconfig              # 코드 스타일 설정
-+-- .gitignore                 # Git 제외 파일
-+-- cspell.config.yaml         # 맞춤법 검사 설정
-+-- NuGet.Config               # NuGet 패키지 소스
-+-- README.md                  # 프로젝트 설명
-|
-+-- 📂 .vscode/                    # VS Code 작업 공간 설정
-|   +-- extensions.json            # 권장 확장 프로그램
-|   \-- settings.json              # 워크스페이스 설정
-|
-+-- 📦 Programmers.Solutions/      # 프로그래머스 제출용 솔루션 프로젝트
-|   +-- Programmers.Solutions.csproj
-|   \-- Lv03/
-|       \-- Exam42892.cs           # 레벨 3 문제
-|
-+-- 📦 Programmers.Solutions.Modern/ # 최신 C# 문법 활용한 솔루션 프로젝트
-|   +-- Programmers.Solutions.Modern.csproj
-|   +-- Practice/
-|   |   \-- Practice000001.cs      # 개인 연습문제
-|   |
-|   \-- Lv03/
-|       +-- Exam42892.cs           # 레벨 3 문제
-|       \-- Exam42892A.cs          # 레벨 3 문제 - 재귀를 루프로 변환
-|
-\-- 🧪 Programmers.Solutions.Tests/ # 테스트 프로젝트
-    +-- Programmers.Solutions.Tests.csproj
-    +-- Practice/
-    |   \-- Practice000001Tests.cs # 개인 연습문제 테스트
-    |
-    \-- Lv03/
-        \-- Exam42892Tests.cs      # 레벨 3 테스트
+  │
+  │ 🔧 스크립트
+  ├── convert-utf8bom-to-utf8.bat    # UTF-8 BOM 제거 배치파일
+  ├── convert-utf8bom-to-utf8.ps1    # UTF-8 BOM 제거 PowerShell Script
+  │
+  │ ⚙️ 설정 파일
+  ├── .editorconfig              # 코드 스타일 설정
+  ├── .gitignore                 # Git 제외 파일
+  ├── cspell.config.yaml         # 맞춤법 검사 설정
+  ├── NuGet.Config               # NuGet 패키지 소스
+  ├── README.md                  # 프로젝트 설명
+  │
+  ├── 📂 .vscode/                    # VS Code 작업 공간 설정
+  │   ├── extensions.json            # 권장 확장 프로그램
+  │   └── settings.json              # 워크스페이스 설정
+  │
+  ├── 📦 Programmers.Solutions/      # 프로그래머스 제출용 솔루션 프로젝트
+  │   ├── Programmers.Solutions.csproj
+  │   └── Lv03/
+  │       └── Exam42892.cs           # 레벨 3 문제
+  │
+  ├── 📦 Programmers.Solutions.Modern/ # 최신 C# 문법 활용한 솔루션 프로젝트
+  │   ├── Programmers.Solutions.Modern.csproj
+  │   ├── Practice/
+  │   │   └── Practice000001.cs      # 개인 연습문제
+  │   │
+  │   └── Lv03/
+  │       ├── Exam42892.cs           # 레벨 3 문제
+  │       └── Exam42892A.cs          # 레벨 3 문제 - 재귀를 루프로 변환
+  │
+  └── 🧪 Programmers.Solutions.Tests/ # 테스트 프로젝트
+      ├── Programmers.Solutions.Tests.csproj
+      ├── Practice/
+      │   └── Practice000001Tests.cs # 개인 연습문제 테스트
+      │
+      └── Lv03/
+          └── Exam42892Tests.cs      # 레벨 3 테스트
 ```
 
 ### 프로젝트별 C# 버전 요약
